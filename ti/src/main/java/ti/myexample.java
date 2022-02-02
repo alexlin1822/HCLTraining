@@ -22,9 +22,21 @@ public class myexample{
 		    System.out.println("Enter Marks: ");
 		    int iMarks = Integer.parseInt(myObj.nextLine());
 
+		    
+		    
 		    //Check if 0<marks<100
 		    try {
 		    	if ((iMarks>100) || (iMarks<0)) throw new MyException();
+		    	else {
+		    		System.out.println("---------------------");
+		    		System.out.print("Student ID: ");
+		    		System.out.println(iStudentID);
+		    		System.out.print("Student Name: ");
+		    		System.out.println(sStudentName);
+		    		System.out.print("Marks: ");
+		    		System.out.println(iMarks);
+		    		System.out.println("---------------------");
+		    	}
 		    }catch (MyException e) {
 		    	System.out.println (e);
 		    }
