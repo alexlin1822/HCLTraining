@@ -1,17 +1,18 @@
 package ti;
 import java.util.*;
 
-public class myexample{
+public class MyExample{
 
 	public static void main(String[] args)  {
-		student aa =new student();
+		Student aa =new Student();
 		boolean isRunning=true;
 		
+		Scanner myObj = new Scanner(System.in); 
 		
 		while (isRunning) {
-		    //User input
-			Scanner myObj = new Scanner(System.in);  
-		    
+
+ 
+		    //User input		    
 		    System.out.println("Enter Student ID: ");
 		    int iStudentID = Integer.parseInt(myObj.nextLine());
 		    
@@ -22,8 +23,6 @@ public class myexample{
 		    System.out.println("Enter Marks: ");
 		    int iMarks = Integer.parseInt(myObj.nextLine());
 
-		    
-		    
 		    //Check if 0<marks<100
 		    try {
 		    	if ((iMarks>100) || (iMarks<0)) throw new MyException();
@@ -41,7 +40,13 @@ public class myexample{
 		    	System.out.println (e);
 		    }
 
+		    //Check if user want to continues
+		    System.out.println("Do you want to enter next student: (y/n):");
+		    isRunning = (myObj.nextLine().toString().equals("y"));
+		    
+		   
 		}
+	    myObj.close();
 	}
 
 }
